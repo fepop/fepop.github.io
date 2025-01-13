@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lance's Programming Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1e1e2f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background: #282c34;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #61dafb;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            color: #61dafb;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px; /* Larger padding for rectangle-like appearance */
+            border-radius: 25px; /* Rounded corners */
+            background: #444; /* Background color for the link */
+            border: 2px solid transparent;
+            transition: background 0.3s, transform 0.3s, border-color 0.3s;
+            display: inline-block; /* Ensure padding and border apply properly */
+            text-align: center;
+        }
+
+        .nav-bar a:hover {
+            background: #61dafb;
+            color: #282c34;
+            transform: translateY(-3px); /* Lift effect */
+            border-color: #61dafb; /* Border appears on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: auto;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 25%;
+            background: #2c2f3f;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-me {
+            width: 90%;
+            max-width: 300px;
+            background: #333;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .about-me img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid #61dafb;
+        }
+
+        .about-me h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .about-me p {
+            text-align: center;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .projects-container,
+        .skills-container {
+            width: 90%;
+            margin: 0 auto;
+            background: #333;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .projects-container h3,
+        .skills-container h3 {
+            font-size: 2em;
+            color: #61dafb;
+            margin-bottom: 20px;
+        }
+
+        .project-card,
+        .skill-card {
+            background: #444;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card:hover,
+        .skill-card:hover {
+            background: #555;
+            transform: translateY(-5px);
+        }
+
+        .project-card h4,
+        .skill-card h4 {
+            color: #61dafb;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .project-card p,
+        .skill-card p {
+            color: #ddd;
+            font-size: 1.1em;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card a:hover {
+            color: #61dafb;
+        }
+
+        footer {
+            background: #282c34;
+            padding: 20px;
+            text-align: center;
+            color: #8a8a8a;
+        }
+
+        footer a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact me</h1>
+        <div class="nav-bar">
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('skills')">Skills</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="about-me">
+                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/470053476_512842874400129_8406759356119357529_n.png?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHmOjWeTTwORcu6kYOg1qWFfG9bBTiYub98b1sFOJi5v08P_QF8yehvQKqrCq6sn50oYbp2lzSzh2CkOymXCNSQ&_nc_ohc=4-D74QWTRMwQ7kNvgFZLfW0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gHMEYAguO9zkt_nhCd4dz8kD3a2eHegWCFaYt928vKbzw&oe=67ACA56B" alt="Lance's Profile Picture">
+                <h2>Lance</h2>
+                <p>Hi, I'm Lance, a Python programmer who enjoys solving problems and creating projects that improve my skills.</p>
+                <div>
+                    <p>Email: <a href="mailto:lancematthewgam@gmail.com" style="color:#61dafb;">lancematthewgam@gmail.com</a></p>
+                    <p>GitHub: <a href="https://github.com/fepop" target="_blank" style="color:#61dafb;">github.com/fepop</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="content">
+            <!-- Projects Section -->
+            <div id="projects" class="projects-container">
+                <h3>Projects</h3>
+                <div class="project-card">
+                    <a href="https://github.com/fepop/FlashCard" target="_blank">
+                        <h4>Flash Cards App</h4>
+                        <p>A Python-based flash cards app with a simple and user-friendly interface.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/fepop/BlackJack-game" target="_blank">
+                        <h4>Blackjack Game</h4>
+                        <p>A Python implementation of the classic Blackjack card game with a command-line interface.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/fepop/Habit-Tracker" target="_blank">
+                        <h4>Task Manager</h4>
+                        <p>An efficient to-do list app in Python with features like adding, editing, and deleting tasks.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/fepop/Turtle-Crossing-Game" target="_blank">
+                        <h4>Turtle Crossing Game</h4>
+                        <p>A small python game that uses the Turtle module to play a crossing game where you avoid cars, gradually getting harder.</p>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/fepop/Stock-news" target="_blank">
+                        <h4>Stock-News App</h4>
+                        <p>A python program that combines stock market data with the latest news, providing users with up-to-date information on financial markets.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills Section (Hidden by Default) -->
+            <div id="skills" class="skills-container" style="display: none;">
+                <h3>Skills</h3>
+                <div class="skill-card">
+                    <h4>Python</h4>
+                    <p>Advanced programming with Python, including libraries like Flask, Pandas, and more.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>APIs</h4>
+                    <p>Experience working with APIs such as Twilio, Sheety, Weather, integrating third-party services, and handling data.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Web Development</h4>
+                    <p>HTML, CSS, JavaScript, and frameworks like Flask for building modern web applications.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Database Management</h4>
+                    <p>Proficient with SQL databases such as MySQL and SQLite, handling queries and optimizations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lance's Programming Portfolio</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById('skills').style.display = 'none';
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
