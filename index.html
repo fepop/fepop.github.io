@@ -59,15 +59,11 @@
 
         .container {
             display: flex;
-            flex: 1;
-            overflow: auto;
-            flex-wrap: wrap;
+            flex-direction: column;
             padding: 20px;
         }
 
         .sidebar {
-            width: 100%;
-            max-width: 300px;
             background: #2c2f3f;
             padding: 20px;
             box-sizing: border-box;
@@ -116,8 +112,6 @@
         }
 
         .main-content {
-            flex-grow: 1;
-            width: 100%;
             padding: 20px;
         }
 
@@ -168,13 +162,18 @@
             font-size: 1.1em;
         }
 
-        /* Ensure links in project cards do not have underlines */
         .project-card a {
             text-decoration: none;
         }
 
         /* Responsive Layout */
         @media (min-width: 576px) {
+            .container {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+            }
+
             .sidebar {
                 width: 30%;
             }
@@ -186,11 +185,11 @@
 
         @media (min-width: 992px) {
             .sidebar {
-                width: 25%;
+                width: 25%; /* Sidebar takes 25% of the width on larger screens */
             }
 
             .main-content {
-                width: 75%;
+                width: 75%; /* Main content takes 75% of the width on larger screens */
             }
         }
     </style>
