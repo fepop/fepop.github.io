@@ -102,10 +102,11 @@
         }
 
         .about-me p {
-            text-align: center;
-            color: #ddd;
-            line-height: 1.5;
-        }
+    text-align: center;
+    color: #ddd;
+    line-height: 1.5;
+    white-space: normal;  /* Allows wrapping */
+}
 
         .about-me a {
             color: #61dafb;
@@ -167,7 +168,7 @@
         }
 
         /* Responsive Layout */
-        @media (min-width: 576px) {
+        @media (min-width: 767px) {
             .container {
                 display: flex;
                 flex-direction: row;
@@ -192,6 +193,11 @@
                 width: 75%; /* Main content takes 75% of the width on larger screens */
             }
         }
+        @media (min-width: 576px) and (max-width: 1198px) {
+    .about-me p {
+        word-break: break-all;  /* Breaks long words (email) if needed */
+    }
+}
     </style>
 </head>
 <body>
