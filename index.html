@@ -87,6 +87,9 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
         }
 
         .about-me img {
@@ -107,6 +110,13 @@
             text-align: center;
             color: #ddd;
             line-height: 1.5;
+            word-wrap: break-word;  /* Allow long text to wrap */
+            max-width: 100%;
+            overflow-wrap: anywhere; /* Prevents overflow of text */
+        }
+
+        .about-me a {
+            word-break: break-all; /* Breaks long email or URL */
         }
 
         /* Main Content */
@@ -253,19 +263,19 @@
                 <h3>Skills</h3>
                 <div class="skill-card">
                     <h4>Python</h4>
-                    <p>Advanced programming with Python, including libraries like Flask, Pandas, and more.</p>
+                    <p>Advanced programming with Python, including libraries like Pandas.</p>
                 </div>
                 <div class="skill-card">
                     <h4>APIs</h4>
-                    <p>Experience working with APIs such as Twilio, Sheety, Weather, integrating third-party services, and handling data.</p>
+                    <p>Experience working with APIs such as Twilio, Sheety, integrating third-party services, and handling data.</p>
                 </div>
                 <div class="skill-card">
                     <h4>Web Development</h4>
-                    <p>HTML, CSS, JavaScript, and frameworks like Flask for building modern web applications.</p>
+                    <p>Basic foundation in HTML, CSS, and JavaScript.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Database Management</h4>
-                    <p>Proficient with SQL databases such as MySQL and SQLite, handling queries and optimizations.</p>
+                    <h4>Object oriented programming</h4>
+                    <p>Proficient in concepts such as classes,objects and inheritance, creating effecient and reuseable code.</p>
                 </div>
             </div>
         </div>
@@ -281,9 +291,13 @@
             document.getElementById('projects').style.display = 'none';
             document.getElementById('skills').style.display = 'none';
 
-            // Show the selected section
+            // Show selected section
             document.getElementById(sectionId).style.display = 'block';
         }
+
+        // Show projects by default
+        showSection('projects');
     </script>
 </body>
 </html>
+
